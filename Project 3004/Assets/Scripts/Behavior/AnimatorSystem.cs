@@ -8,7 +8,7 @@ public class AnimatorSystem : MonoBehaviour
     Animator animator;
     MovementData md;
 
-    void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         md = GetComponent<MovementData>();
@@ -16,17 +16,6 @@ public class AnimatorSystem : MonoBehaviour
 
     void Update()
     {
-        if(animator == null)
-        {
-            animator = GetComponent<Animator>();
-        }
-        if (md == null)
-        {
-            md = GetComponent<MovementData>();
-        }
-        if(animator != null && md != null)
-        {
-            animator.SetFloat("MovementVec", Mathf.Max(Mathf.Abs(md.xAxis), Mathf.Abs(md.yAxis)));
-        }
+        animator.SetFloat("MovementVec", Mathf.Max(Mathf.Abs(md.xAxis), Mathf.Abs(md.yAxis)));
     }
 }
