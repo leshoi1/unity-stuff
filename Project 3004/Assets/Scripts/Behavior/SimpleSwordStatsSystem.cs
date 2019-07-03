@@ -3,7 +3,7 @@
 public class SimpleSwordStatsSystem : MonoBehaviour
 {
     SimpleSwordData sd;
-    DamageData dd;
+    d_General_OffensiveStats dd;
     private void Awake()
     {
      //   sd = GetComponent<SimpleSwordData>();
@@ -13,7 +13,7 @@ public class SimpleSwordStatsSystem : MonoBehaviour
     void Start()
     {
         sd = GetComponent<SimpleSwordData>();
-        dd = Database.GetPlayer().GetComponent<DamageData>();
+        dd = Database.GetPlayer().GetComponent<d_General_OffensiveStats>();
         dd.flatDamage += sd.baseDamage;
     }
 }

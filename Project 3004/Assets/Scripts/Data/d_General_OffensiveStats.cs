@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageData : MonoBehaviour
+public class d_General_OffensiveStats : MonoBehaviour
 {
     public float flatDamage;
     public float additiveDamage;
