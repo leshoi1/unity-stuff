@@ -11,7 +11,6 @@ public class SimpleAttackSystem : MonoBehaviour
     ContactFilter2D contactFilter;
 
     public float AttackRate;
-    float timeBtwAttack;
 
     void Start()
     {
@@ -22,37 +21,26 @@ public class SimpleAttackSystem : MonoBehaviour
         contactFilter = new ContactFilter2D();
         contactFilter.useLayerMask = true;
         contactFilter.layerMask = LayerMask.GetMask("Enemies");
+        EventHandler.OnAttackLanded += Use;
     }
 
-    void Update()
+    void Use()
     {
-        if (id.skill_1)
+        b2d.enabled = true;
+        int len = b2d.OverlapCollider(contactFilter, enemiesColliders);
+        if (len > 0)
         {
-            int len = b2d.OverlapCollider(contactFilter, enemiesColliders);
-            if (len > 0)
-            {
-                if (timeBtwAttack <= 0)
+                for (int i = 0; i < len; ++i)
                 {
-                    for (int i = 0; i < len; ++i)
+                    b_General_DamageReceiver damageReceiver = enemiesColliders[i].gameObject.GetComponent<b_General_DamageReceiver>();
+                    if (damageReceiver != null)
                     {
-                        b_General_DamageReceiver damageReceiver = enemiesColliders[i].gameObject.GetComponent<b_General_DamageReceiver>();
-                        if (damageReceiver != null)
-                        {
-                            DamageData damageData = new DamageData();
-                            damageData.damageValue = Database.GetPlayer().GetComponent<d_General_OffensiveStats>().flatDamage * (sad_ptr.damagePercent / 100);
-                            damageReceiver.DamageInput(damageData);
-                        }
+                        DamageData damageData = new DamageData();
+                        damageData.damageValue = Database.GetPlayer().GetComponent<d_General_OffensiveStats>().flatDamage * (sad_ptr.damagePercent / 100);
+                        damageReceiver.DamageInput(damageData);
                     }
-                    timeBtwAttack = AttackRate;
                 }
-            }
-
         }
-        if(timeBtwAttack > 0)
-        {
-            timeBtwAttack -= Time.deltaTime;
-        }
-        if (timeBtwAttack < 0)
-            timeBtwAttack = 0;
+        b2d.enabled = false;
     }
 }

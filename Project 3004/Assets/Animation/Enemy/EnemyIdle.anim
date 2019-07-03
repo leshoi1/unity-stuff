@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_Attack
+  m_Name: EnemyIdle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 6bbfa5eb75ba471409fef181f0e5a3d8, type: 3}
+      value: {fileID: 21300000, guid: 6f6dca6b7ba24a248b98cdbea13bf370, type: 3}
     - time: 0.1
-      value: {fileID: 21300000, guid: 433837962d02e144890c4713aa5b8c48, type: 3}
+      value: {fileID: 21300000, guid: 94b18af8ae05d1946ac01f355503c4a8, type: 3}
     - time: 0.2
-      value: {fileID: 21300000, guid: 6f26104e1b74da94a88e501700e0c1fd, type: 3}
+      value: {fileID: 21300000, guid: bc66b452e6066f940b37cd0ead5fd21d, type: 3}
     - time: 0.3
-      value: {fileID: 21300000, guid: e1a668d3982b2e74c83993736a8e659c, type: 3}
+      value: {fileID: 21300000, guid: 25589d66c6f73c148bd7615104421bd7, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 6bbfa5eb75ba471409fef181f0e5a3d8, type: 3}
-    - {fileID: 21300000, guid: 433837962d02e144890c4713aa5b8c48, type: 3}
-    - {fileID: 21300000, guid: 6f26104e1b74da94a88e501700e0c1fd, type: 3}
-    - {fileID: 21300000, guid: e1a668d3982b2e74c83993736a8e659c, type: 3}
+    - {fileID: 21300000, guid: 6f6dca6b7ba24a248b98cdbea13bf370, type: 3}
+    - {fileID: 21300000, guid: 94b18af8ae05d1946ac01f355503c4a8, type: 3}
+    - {fileID: 21300000, guid: bc66b452e6066f940b37cd0ead5fd21d, type: 3}
+    - {fileID: 21300000, guid: 25589d66c6f73c148bd7615104421bd7, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -60,7 +60,7 @@ AnimationClip:
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -74,11 +74,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.2
-    functionName: AttackEvent
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
